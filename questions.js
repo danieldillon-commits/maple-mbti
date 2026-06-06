@@ -658,7 +658,7 @@ function showFinalResult() {
 }
 
 function copyResult(job, mbti) {
-  const text = `내 메BTI 결과는 ${job}!\\n${resultTitles[job]}\\n메BTI 유형: ${mbti}`;
+  const text = "내 메BTI 결과는 " + job + "!\n" + resultTitles[job] + "\n메BTI 유형: " + mbti;
   navigator.clipboard.writeText(text);
   alert("결과가 복사됐어요!");
 }
