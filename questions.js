@@ -57,6 +57,28 @@ const questions = [
   }
 ];
 
+const mbtiJobs = {
+  ISTJ: ["히어로", "다크나이트", "나이트로드"],
+  ISFJ: ["비숍", "미하일", "팔라딘"],
+  INFJ: ["데몬슬레이어", "썬콜", "에반"],
+  INTJ: ["제로", "섀도어", "루미너스"],
+
+  ISTP: ["윈드브레이커", "나이트워커", "와일드헌터"],
+  ISFP: ["카인", "바이퍼", "플레임위자드"],
+  INFP: ["제논", "카이저", "메카닉"],
+  INTP: ["일리움", "신궁", "패스파인더"],
+
+  ESTP: ["팬텀", "불독", "블래스터"],
+  ESFP: ["엔젤릭버스터", "스트라이커", "키네시스"],
+  ENFP: ["호영", "캡틴", "카데나"],
+  ENTP: ["칼리", "스트라이커", "카데나"],
+
+  ESTJ: ["캐논마스터", "데몬어벤져", "카이저"],
+  ESFJ: ["라라", "보우마스터", "은월"],
+  ENFJ: ["소울마스터", "아란", "메르세데스"],
+  ENTJ: ["아델", "배틀메이지", "아크"]
+};
+
 let currentQuestion = 0;
 
 let scores = {
@@ -90,7 +112,6 @@ function renderQuestion() {
 
 function selectAnswer(type) {
   scores[type]++;
-
   currentQuestion++;
 
   if (currentQuestion >= questions.length) {
@@ -108,10 +129,22 @@ function calculateMBTI() {
     (scores.F >= scores.T ? "F" : "T") +
     (scores.P >= scores.J ? "P" : "J");
 
+  showMbtiJobs(mbti);
+}
+
+function showMbtiJobs(mbti) {
+  const jobs = mbtiJobs[mbti];
+
   document.querySelector(".container").innerHTML = `
     <h1>${mbti}</h1>
 
     <p>당신의 메BTI 유형이 결정되었습니다!</p>
+
+    <h2>추천 직업 후보</h2>
+
+    <div class="job-card">${jobs[0]}</div>
+    <div class="job-card">${jobs[1]}</div>
+    <div class="job-card">${jobs[2]}</div>
 
     <button onclick="location.reload()">
       다시하기
