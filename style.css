@@ -1,0 +1,23 @@
+body {
+  background: #121212;
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0;
+}
+
+.container {
+  margin-top: 100px;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
