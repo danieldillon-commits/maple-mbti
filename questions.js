@@ -57,84 +57,7 @@ const questions = [
   }
 ];
 
-const mbtiJobs = {
-  ISTJ: ["히어로", "다크나이트", "나이트로드"],
-  ISFJ: ["비숍", "미하일", "팔라딘"],
-  INFJ: ["데몬슬레이어", "썬콜", "에반"],
-  INTJ: ["제로", "섀도어", "루미너스"],
-
-  ISTP: ["윈드브레이커", "나이트워커", "와일드헌터"],
-  ISFP: ["카인", "바이퍼", "플레임위자드"],
-  INFP: ["제논", "카이저", "메카닉"],
-  INTP: ["일리움", "신궁", "패스파인더"],
-
-  ESTP: ["팬텀", "불독", "블래스터"],
-  ESFP: ["엔젤릭버스터", "스트라이커", "키네시스"],
-  ENFP: ["호영", "캡틴", "카데나"],
-  ENTP: ["칼리", "스트라이커", "카데나"],
-
-  ESTJ: ["캐논마스터", "데몬어벤져", "카이저"],
-  ESFJ: ["라라", "보우마스터", "은월"],
-  ENFJ: ["소울마스터", "아란", "메르세데스"],
-  ENTJ: ["아델", "배틀메이지", "아크"]
-};
-
-let currentQuestion = 0;
-
-let scores = {
-  I: 0,
-  E: 0,
-  S: 0,
-  N: 0,
-  T: 0,
-  F: 0,
-  J: 0,
-  P: 0
-};
-
-function renderQuestion() {
-  const q = questions[currentQuestion];
-
-  document.querySelector(".container").innerHTML = `
-    <h2>${q.question}</h2>
-
-    <button onclick="selectAnswer('${q.answers[0].type}')">
-      ${q.answers[0].text}
-    </button>
-
-    <button onclick="selectAnswer('${q.answers[1].type}')">
-      ${q.answers[1].text}
-    </button>
-
-    <p>${currentQuestion + 1} / ${questions.length}</p>
-  `;
-}
-
-function selectAnswer(type) {
-  scores[type]++;
-  currentQuestion++;
-
-  if (currentQuestion >= questions.length) {
-    calculateMBTI();
-    return;
-  }
-
-  renderQuestion();
-}
-
-function calculateMBTI() {
-  const mbti =
-    (scores.E >= scores.I ? "E" : "I") +
-    (scores.N >= scores.S ? "N" : "S") +
-    (scores.F >= scores.T ? "F" : "T") +
-    (scores.P >= scores.J ? "P" : "J");
-
-  showMbtiJobs(mbti);
-}
-
-function showMbtiJobs(mbti) {
-  const jobs = mbtiJobs[mbti];
-  const jobQuestions = {
+const jobQuestions = {
   ISTJ: [
     {
       question: "Q9. 본캐를 고를 때 가장 중요한 것은?",
@@ -568,22 +491,148 @@ function showMbtiJobs(mbti) {
   ]
 };
 
+const resultTitles = {
+  "히어로": "정석은 결국 통한다.",
+  "다크나이트": "끝까지 버티는 사람이 결국 이긴다.",
+  "나이트로드": "결과로 증명하면 된다.",
+  "비숍": "함께라서 더 강해진다.",
+  "미하일": "누군가는 앞에서 지켜야 한다.",
+  "팔라딘": "가장 강한 사람은 믿음을 주는 사람이다.",
+  "데몬슬레이어": "상처도 결국 성장의 일부다.",
+  "썬콜": "이해하는 순간, 세상이 달라진다.",
+  "에반": "함께 성장하는 것이 가장 큰 힘이다.",
+  "제로": "완벽한 계획은 우연을 이긴다.",
+  "섀도어": "최고의 결과는 낭비를 줄이는 것에서 시작된다.",
+  "루미너스": "압도적인 결과는 모든 과정을 증명한다.",
+  "윈드브레이커": "자신의 리듬을 지키는 사람이 강하다.",
+  "나이트워커": "필요한 순간에 움직이면 된다.",
+  "와일드헌터": "상황이 바뀌면 방법도 바뀌어야 한다.",
+  "카인": "압도적인 분위기는 그 자체로 강함이다.",
+  "바이퍼": "재밌어야 계속 할 수 있다.",
+  "플레임위자드": "멋있으면 이유는 충분하다.",
+  "제논": "특별함은 만들어가는 것이다.",
+  "카이저": "성장의 끝에는 새로운 내가 있다.",
+  "메카닉": "아이디어는 실행될 때 가치가 있다.",
+  "일리움": "세상을 바꾸는 건 새로운 발상이다.",
+  "신궁": "정확함은 최고의 무기다.",
+  "패스파인더": "새로운 길은 직접 만들어가는 것이다.",
+  "팬텀": "스타일은 실력만큼 중요하다.",
+  "불독": "자신감은 최고의 재능이다.",
+  "블래스터": "한계를 넘는 순간이 가장 재밌다.",
+  "엔젤릭버스터": "빛나는 사람은 결국 눈에 띈다.",
+  "스트라이커": "고민보다 행동이 빠르다.",
+  "키네시스": "세상을 다르게 보는 것이 재능이다.",
+  "호영": "재밌어 보이면 일단 해본다.",
+  "캡틴": "모험 없는 인생은 너무 심심하다.",
+  "카데나": "어렵다고? 그래서 더 재밌다.",
+  "칼리": "불가능해 보일수록 더 끌린다.",
+  "캐논마스터": "크게 쏠 거면 제대로 쏜다.",
+  "데몬어벤져": "위험을 감수해야 더 멀리 갈 수 있다.",
+  "라라": "행복은 함께할 때 더 커진다.",
+  "보우마스터": "믿음은 꾸준함에서 만들어진다.",
+  "은월": "보이지 않아도 마음은 남는다.",
+  "소울마스터": "빛은 결국 사람을 움직인다.",
+  "아란": "포기하지 않는 의지가 결국 길을 만든다.",
+  "메르세데스": "진짜 강함은 품격에서 나온다.",
+  "아델": "도전하는 자는 아름답다.",
+  "배틀메이지": "혼자 강한 것보다 함께 강한 것이 중요하다.",
+  "아크": "새로운 길은 누군가 먼저 걸어야 한다."
+};
+
+let currentQuestion = 0;
+let currentJobQuestion = 0;
+let selectedMbti = "";
+let jobScores = {};
+
+let scores = {
+  I: 0,
+  E: 0,
+  S: 0,
+  N: 0,
+  T: 0,
+  F: 0,
+  J: 0,
+  P: 0
+};
+
+function renderQuestion() {
+  const q = questions[currentQuestion];
+
   document.querySelector(".container").innerHTML = `
-    <h1>${mbti}</h1>
-
-    <p>당신의 메BTI 유형이 결정되었습니다!</p>
-
-    <h2>추천 직업 후보</h2>
-
-    <div class="job-card">${jobs[0]}</div>
-    <div class="job-card">${jobs[1]}</div>
-    <div class="job-card">${jobs[2]}</div>
-
-    <button onclick="location.reload()">
-      다시하기
-    </button>
+    <h2>${q.question}</h2>
+    <button onclick="selectAnswer('${q.answers[0].type}')">${q.answers[0].text}</button>
+    <button onclick="selectAnswer('${q.answers[1].type}')">${q.answers[1].text}</button>
+    <p>${currentQuestion + 1} / 11</p>
   `;
 }
 
-document.getElementById("startBtn")
-  .addEventListener("click", renderQuestion);
+function selectAnswer(type) {
+  scores[type]++;
+  currentQuestion++;
+
+  if (currentQuestion >= questions.length) {
+    calculateMBTI();
+    return;
+  }
+
+  renderQuestion();
+}
+
+function calculateMBTI() {
+  const mbti =
+    (scores.E >= scores.I ? "E" : "I") +
+    (scores.N >= scores.S ? "N" : "S") +
+    (scores.F >= scores.T ? "F" : "T") +
+    (scores.P >= scores.J ? "P" : "J");
+
+  selectedMbti = mbti;
+  currentJobQuestion = 0;
+  jobScores = {};
+
+  showJobQuestion();
+}
+
+function showJobQuestion() {
+  const q = jobQuestions[selectedMbti][currentJobQuestion];
+
+  document.querySelector(".container").innerHTML = `
+    <h2>${q.question}</h2>
+    <button onclick="selectJobAnswer('${q.answers[0].job}')">${q.answers[0].text}</button>
+    <button onclick="selectJobAnswer('${q.answers[1].job}')">${q.answers[1].text}</button>
+    <button onclick="selectJobAnswer('${q.answers[2].job}')">${q.answers[2].text}</button>
+    <p>${currentJobQuestion + 9} / 11</p>
+  `;
+}
+
+function selectJobAnswer(job) {
+  jobScores[job] = (jobScores[job] || 0) + 1;
+  currentJobQuestion++;
+
+  if (currentJobQuestion >= jobQuestions[selectedMbti].length) {
+    showFinalResult();
+    return;
+  }
+
+  showJobQuestion();
+}
+
+function showFinalResult() {
+  let finalJob = "";
+  let maxScore = -1;
+
+  for (const job in jobScores) {
+    if (jobScores[job] > maxScore) {
+      maxScore = jobScores[job];
+      finalJob = job;
+    }
+  }
+
+  document.querySelector(".container").innerHTML = `
+    <h1>${finalJob}</h1>
+    <h2>${resultTitles[finalJob]}</h2>
+    <p>당신의 메BTI 유형: ${selectedMbti}</p>
+    <button onclick="location.reload()">다시 테스트하기</button>
+  `;
+}
+
+document.getElementById("startBtn").addEventListener("click", renderQuestion);
