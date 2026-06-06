@@ -32,3 +32,12 @@ button {
   border-radius: 12px;
   cursor: pointer;
 }
+.job-card {
+  background: white;
+  color: #222;
+  padding: 18px;
+  margin: 12px 0;
+  border-radius: 14px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
