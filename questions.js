@@ -662,3 +662,5 @@ function copyResult(job, mbti) {
   navigator.clipboard.writeText(text);
   alert("결과가 복사됐어요!");
 }
+
+document.getElementById("startBtn").addEventListener("click", renderQuestion);
