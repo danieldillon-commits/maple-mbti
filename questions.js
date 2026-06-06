@@ -627,12 +627,38 @@ function showFinalResult() {
     }
   }
 
+  const allJobs = jobQuestions[selectedMbti][0].answers.map(answer => answer.job);
+  const relatedJobs = allJobs.filter(job => job !== finalJob);
+
   document.querySelector(".container").innerHTML = `
-    <h1>${finalJob}</h1>
-    <h2>${resultTitles[finalJob]}</h2>
-    <p>당신의 메BTI 유형: ${selectedMbti}</p>
-    <button onclick="location.reload()">다시 테스트하기</button>
+    <div class="result-card">
+      <p class="result-label">당신의 메BTI 직업은?</p>
+
+      <h1>${finalJob}</h1>
+
+      <h2>${resultTitles[finalJob]}</h2>
+
+      <p class="mbti-text">당신의 메BTI 유형: <strong>${selectedMbti}</strong></p>
+
+      <div class="related-box">
+        <p>이런 직업도 잘 맞아요</p>
+        <div class="job-card">${relatedJobs[0]}</div>
+        <div class="job-card">${relatedJobs[1]}</div>
+      </div>
+
+      <button onclick="copyResult('${finalJob}', '${selectedMbti}')">
+        결과 복사하기
+      </button>
+
+      <button onclick="location.reload()">
+        다시 테스트하기
+      </button>
+    </div>
   `;
 }
 
-document.getElementById("startBtn").addEventListener("click", renderQuestion);
+function copyResult(job, mbti) {
+  const text = `내 메BTI 결과는 ${job}!\\n${resultTitles[job]}\\n메BTI 유형: ${mbti}`;
+  navigator.clipboard.writeText(text);
+  alert("결과가 복사됐어요!");
+}
