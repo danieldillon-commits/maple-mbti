@@ -62,3 +62,10 @@ button {
 .related-box {
   margin: 30px 0;
 }
+
+.result-description {
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin: 25px 0;
+  color: #f1f1f1;
+}
