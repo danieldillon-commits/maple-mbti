@@ -683,11 +683,12 @@ function showFinalResult() {
 
       <p class="mbti-text">당신의 메BTI 유형: <strong>${selectedMbti}</strong></p>
 
-      <div class="related-box">
-        <p>이런 직업도 잘 맞아요</p>
-        <div class="job-card">${relatedJobs[0]}</div>
-        <div class="job-card">${relatedJobs[1]}</div>
-      </div>
+<div class="related-box">
+  <p>이런 직업도 잘 맞아요 ✨</p>
+
+  <div class="job-card">${relatedJobs[0]}</div>
+  <div class="job-card">${relatedJobs[1]}</div>
+</div>
 
       <button onclick="copyResult('${finalJob}', '${selectedMbti}')">
         결과 복사하기
