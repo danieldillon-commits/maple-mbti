@@ -677,6 +677,10 @@ function showFinalResult() {
 
       <h2>${resultTitles[finalJob]}</h2>
 
+      <p class="result-description">
+  ${resultDescriptions[finalJob] || ""}
+</p>
+
       <p class="mbti-text">당신의 메BTI 유형: <strong>${selectedMbti}</strong></p>
 
       <div class="related-box">
