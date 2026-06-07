@@ -71,9 +71,11 @@ button {
 }
 
 .result-description {
+  white-space: pre-line;
   line-height: 1.8;
   font-size: 1.05rem;
   margin: 25px 0;
+  
 }
 
 .result-card {
