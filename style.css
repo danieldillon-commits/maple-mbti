@@ -69,3 +69,9 @@ button {
   margin: 25px 0;
   color: #f1f1f1;
 }
+
+.result-description {
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin: 25px 0;
+}
