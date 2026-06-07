@@ -72,6 +72,7 @@ button {
 
 .result-description {
   white-space: pre-line;
+  text-align: left;
   line-height: 1.8;
   font-size: 1.05rem;
   margin: 25px 0;
