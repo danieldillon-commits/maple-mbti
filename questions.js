@@ -709,6 +709,8 @@ let answerHistory = [];
 let jobAnswerHistory = [];
 
 function renderQuestion() {
+  document.querySelector(".container").classList.remove("start-screen");
+
   const q = questions[currentQuestion];
 
   document.querySelector(".container").innerHTML = `
