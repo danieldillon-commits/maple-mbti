@@ -295,3 +295,136 @@ button:active {
   max-width: 620px;
   margin: 0 auto;
 }
+
+/* ===== 메BTI 첫 화면 V5.5 ===== */
+
+body {
+  background:
+    radial-gradient(circle at 50% 16%, rgba(255, 185, 60, 0.34), transparent 14%),
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.9), transparent 10%),
+    radial-gradient(circle at 82% 20%, rgba(255, 215, 0, 0.32), transparent 11%),
+    radial-gradient(circle at 35% 86%, rgba(124, 92, 255, 0.22), transparent 13%),
+    radial-gradient(circle at 68% 68%, rgba(74, 163, 255, 0.18), transparent 15%),
+    linear-gradient(180deg, #fff8e8 0%, #f3f0ff 46%, #eaf6ff 100%);
+}
+
+.start-screen {
+  position: relative;
+  min-height: 620px;
+  padding-top: 62px;
+  overflow: hidden;
+}
+
+.start-screen::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 34px;
+  width: 360px;
+  height: 360px;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(circle, rgba(255, 205, 70, 0.34), transparent 58%);
+  filter: blur(2px);
+  z-index: -2;
+}
+
+.start-screen::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -90px;
+  width: 760px;
+  height: 260px;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(ellipse at center, rgba(124, 92, 255, 0.16), transparent 58%),
+    radial-gradient(ellipse at 25% 60%, rgba(255, 170, 60, 0.12), transparent 48%),
+    radial-gradient(ellipse at 78% 45%, rgba(74, 163, 255, 0.15), transparent 52%);
+  filter: blur(6px);
+  z-index: -2;
+}
+
+.leaf-mark {
+  position: relative;
+  font-size: 4.6rem;
+  margin-bottom: -4px;
+  filter:
+    drop-shadow(0 0 18px rgba(255, 120, 0, 0.65))
+    drop-shadow(0 0 42px rgba(255, 215, 0, 0.55));
+}
+
+.leaf-mark::before,
+.leaf-mark::after {
+  content: "✦";
+  position: absolute;
+  color: #ffd166;
+  font-size: 1.2rem;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 10px rgba(255, 209, 102, 0.9));
+}
+
+.leaf-mark::before {
+  left: -42px;
+  top: 18px;
+}
+
+.leaf-mark::after {
+  right: -42px;
+  top: 34px;
+}
+
+.main-logo {
+  font-size: 4.8rem;
+  font-weight: 950;
+  margin: 0 0 16px;
+  background: linear-gradient(135deg, #ff8a00 0%, #ffd700 48%, #fff4b3 72%, #ffb000 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 3px;
+  text-shadow:
+    0 0 18px rgba(255, 176, 0, 0.35),
+    0 0 42px rgba(255, 215, 0, 0.28);
+}
+
+.main-subtitle {
+  font-size: 1.22rem;
+  color: #4b4168;
+  margin: 10px 0 36px;
+  font-weight: 600;
+}
+
+.start-screen button {
+  max-width: 620px;
+  margin: 0 auto;
+  border-radius: 20px;
+  box-shadow:
+    0 16px 32px rgba(92, 92, 255, 0.24),
+    0 0 28px rgba(124, 92, 255, 0.18);
+}
+
+.start-screen button:hover {
+  box-shadow:
+    0 20px 42px rgba(92, 92, 255, 0.32),
+    0 0 36px rgba(255, 209, 102, 0.22);
+}
+
+@media (max-width: 600px) {
+  .start-screen {
+    min-height: 560px;
+    padding-top: 54px;
+  }
+
+  .leaf-mark {
+    font-size: 3.8rem;
+  }
+
+  .main-logo {
+    font-size: 3.7rem;
+  }
+
+  .main-subtitle {
+    font-size: 1.05rem;
+  }
+}
