@@ -210,3 +210,38 @@ button:active {
   color: var(--job-color-1);
   background: color-mix(in srgb, var(--job-color-2) 18%, white);
 }
+
+.main-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.mushroom-icon {
+  font-size: 2.6rem;
+  filter: drop-shadow(0 0 12px rgba(255, 132, 0, 0.45));
+}
+
+.back-btn {
+  background: rgba(255,255,255,0.65);
+  color: #5e5675;
+  box-shadow: none;
+  border: 1px solid rgba(124,92,255,0.18);
+}
+
+.back-btn:hover {
+  background: rgba(255,255,255,0.9);
+}
+
+.result-card h1 {
+  font-size: 3.8rem;
+  font-weight: 900;
+  margin: 15px 0;
+  color: #1c1730;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 12px var(--job-color-1),
+    0 0 28px var(--job-color-2),
+    0 0 45px rgba(255,255,255,0.7);
+}
