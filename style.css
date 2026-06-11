@@ -107,9 +107,29 @@ button:active {
 }
 
 .result-card h1 {
-  font-size: 3.2rem;
-  margin: 12px 0;
-  color: #2b2540;
+  font-size: 3.6rem;
+  font-weight: 900;
+  margin: 15px 0;
+
+  background: linear-gradient(
+    135deg,
+    #ffd700 0%,
+    #ff9d00 25%,
+    #ffffff 50%,
+    #a855f7 75%,
+    #5b7cff 100%
+  );
+
+  background-size: 200% 200%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  text-shadow:
+    0 0 18px rgba(255, 215, 0, 0.45);
+
+  letter-spacing: 2px;
 }
 
 .result-card h2 {
