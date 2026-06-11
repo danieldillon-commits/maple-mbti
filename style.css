@@ -941,3 +941,34 @@ body {
     width: 90vw;
   }
 }
+
+/* ===== 첫 화면 글자 가독성 강화 ===== */
+
+.container.start-screen .main-logo {
+  color: #ffb300;
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+
+  text-shadow:
+    0 3px 0 rgba(120, 72, 0, 0.55),
+    0 0 12px rgba(255, 255, 255, 0.9),
+    0 0 28px rgba(255, 170, 0, 0.55);
+
+  -webkit-text-stroke: 1.5px rgba(115, 68, 0, 0.55);
+}
+
+.container.start-screen .main-subtitle {
+  color: #2f2a55;
+  font-weight: 900;
+  text-shadow:
+    0 2px 0 rgba(255,255,255,0.9),
+    0 0 10px rgba(255,255,255,0.9);
+}
+
+.container.start-screen .logo-area {
+  background: rgba(255, 255, 255, 0.18);
+  padding: 18px 26px 22px;
+  border-radius: 24px;
+  backdrop-filter: blur(2px);
+}
