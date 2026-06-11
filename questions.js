@@ -705,24 +705,54 @@ let scores = {
   P: 0
 };
 
+let answerHistory = [];
+let jobAnswerHistory = [];
+
 function renderQuestion() {
   const q = questions[currentQuestion];
 
   document.querySelector(".container").innerHTML = `
     <h2>${q.question}</h2>
-    <button onclick="selectAnswer('${q.answers[0].type}')">${q.answers[0].text}</button>
-    <button onclick="selectAnswer('${q.answers[1].type}')">${q.answers[1].text}</button>
+
+    <button onclick="selectAnswer('${q.answers[0].type}')">
+      ${q.answers[0].text}
+    </button>
+
+    <button onclick="selectAnswer('${q.answers[1].type}')">
+      ${q.answers[1].text}
+    </button>
+
     <p>${currentQuestion + 1} / 11</p>
+
+    ${currentQuestion > 0 ? `
+      <button class="back-btn" onclick="goBackQuestion()">
+        이전 질문으로
+      </button>
+    ` : ""}
   `;
 }
 
 function selectAnswer(type) {
   scores[type]++;
+  answerHistory.push(type);
   currentQuestion++;
 
   if (currentQuestion >= questions.length) {
     calculateMBTI();
     return;
+  }
+
+  renderQuestion();
+}
+
+function goBackQuestion() {
+  if (currentQuestion <= 0) return;
+
+  currentQuestion--;
+
+  const lastType = answerHistory.pop();
+  if (lastType) {
+    scores[lastType]--;
   }
 
   renderQuestion();
@@ -738,6 +768,7 @@ function calculateMBTI() {
   selectedMbti = mbti;
   currentJobQuestion = 0;
   jobScores = {};
+  jobAnswerHistory = [];
 
   showJobQuestion();
 }
@@ -747,15 +778,30 @@ function showJobQuestion() {
 
   document.querySelector(".container").innerHTML = `
     <h2>${q.question}</h2>
-    <button onclick="selectJobAnswer('${q.answers[0].job}')">${q.answers[0].text}</button>
-    <button onclick="selectJobAnswer('${q.answers[1].job}')">${q.answers[1].text}</button>
-    <button onclick="selectJobAnswer('${q.answers[2].job}')">${q.answers[2].text}</button>
+
+    <button onclick="selectJobAnswer('${q.answers[0].job}')">
+      ${q.answers[0].text}
+    </button>
+
+    <button onclick="selectJobAnswer('${q.answers[1].job}')">
+      ${q.answers[1].text}
+    </button>
+
+    <button onclick="selectJobAnswer('${q.answers[2].job}')">
+      ${q.answers[2].text}
+    </button>
+
     <p>${currentJobQuestion + 9} / 11</p>
+
+    <button class="back-btn" onclick="goBackJobQuestion()">
+      이전 질문으로
+    </button>
   `;
 }
 
 function selectJobAnswer(job) {
   jobScores[job] = (jobScores[job] || 0) + 1;
+  jobAnswerHistory.push(job);
   currentJobQuestion++;
 
   if (currentJobQuestion >= jobQuestions[selectedMbti].length) {
@@ -764,6 +810,29 @@ function selectJobAnswer(job) {
   }
 
   showJobQuestion();
+}
+
+function goBackJobQuestion() {
+  if (currentJobQuestion > 0) {
+    currentJobQuestion--;
+
+    const lastJob = jobAnswerHistory.pop();
+    if (lastJob) {
+      jobScores[lastJob]--;
+    }
+
+    showJobQuestion();
+    return;
+  }
+
+  currentQuestion = questions.length - 1;
+
+  const lastType = answerHistory.pop();
+  if (lastType) {
+    scores[lastType]--;
+  }
+
+  renderQuestion();
 }
 
 function showFinalResult() {
@@ -782,7 +851,7 @@ function showFinalResult() {
   const theme = jobThemes[finalJob] || ["#7c5cff", "#4aa3ff"];
 
   document.querySelector(".container").innerHTML = `
-<div class="result-card" style="--job-color-1: ${theme[0]}; --job-color-2: ${theme[1]};">
+    <div class="result-card" style="--job-color-1: ${theme[0]}; --job-color-2: ${theme[1]};">
       <p class="result-label">당신의 메BTI 직업은?</p>
 
       <h1>${finalJob}</h1>
@@ -790,17 +859,17 @@ function showFinalResult() {
       <h2>${resultTitles[finalJob]}</h2>
 
       <p class="result-description">
-  ${resultDescriptions[finalJob] || ""}
-</p>
+        ${resultDescriptions[finalJob] || ""}
+      </p>
 
       <p class="mbti-text">당신의 메BTI 유형: <strong>${selectedMbti}</strong></p>
 
-<div class="related-box">
-  <p>이런 직업도 잘 맞아요 ✨</p>
+      <div class="related-box">
+        <p>이런 직업도 잘 맞아요 ✨</p>
 
-  <div class="job-card">${relatedJobs[0]}</div>
-  <div class="job-card">${relatedJobs[1]}</div>
-</div>
+        <div class="job-card">${relatedJobs[0]}</div>
+        <div class="job-card">${relatedJobs[1]}</div>
+      </div>
 
       <button onclick="copyResult('${finalJob}', '${selectedMbti}')">
         결과 복사하기
