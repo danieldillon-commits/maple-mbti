@@ -672,202 +672,13 @@ body {
 }
 
 
-/* ===========================
-   하단 신비로운 안개
-=========================== */
-
-.mist {
-  position: absolute;
-  bottom: -80px;
-
-  width: 500px;
-  height: 220px;
-
-  border-radius: 50%;
-
-  filter: blur(45px);
-
-  opacity: 0.55;
-
-  animation:
-    mistMove 12s ease-in-out infinite;
-}
-
-
-.mist-1 {
-  left: -80px;
-
-  background:
-    rgba(190, 170, 255, 0.65);
-}
-
-
-.mist-2 {
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  background:
-    rgba(150, 210, 255, 0.6);
-
-  animation-delay: 4s;
-}
-
-
-.mist-3 {
-  right: -80px;
-
-  background:
-    rgba(255, 210, 120, 0.45);
-
-  animation-delay: 8s;
-}
-
-
-@keyframes mistMove {
-
-  0%,100% {
-    transform:
-      translateY(0px);
-  }
-
-  50% {
-    transform:
-      translateY(-25px);
-  }
-}
-
-
-/* ===========================
-   게임 시작 버튼
-=========================== */
-
-.start-button-area {
-  position: relative;
-  z-index: 5;
-
-  margin-top: 35px;
-}
-
-
-.start-screen button {
-
-  max-width: 450px;
-
-  margin: auto;
-
-  font-size: 1.2rem;
-
-  font-weight: 800;
-
-  border-radius: 30px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #8c6cff,
-      #4aa3ff
-    );
-
-  box-shadow:
-    0 0 25px rgba(124,92,255,0.55),
-    0 0 60px rgba(74,163,255,0.35);
-
-  transition:
-    0.35s;
-}
-
-
-.start-screen button:hover {
-
-  transform:
-    translateY(-5px)
-    scale(1.04);
-
-  box-shadow:
-    0 0 35px rgba(255,215,0,0.6),
-    0 0 70px rgba(124,92,255,0.55);
-}
-
-
-/* 모바일 */
-@media (max-width: 600px) {
-
-  .main-logo {
-    font-size: 3.8rem;
-  }
-
-
-  .maple-leaf {
-    width: 120px;
-    height: 120px;
-  }
-
-
-  .mist {
-    width: 300px;
-  }
-
-}
-
-.start-screen {
-  background-image:
-    linear-gradient(rgba(255,255,255,0.18), rgba(255,255,255,0.28)),
-    url("background.png");
-  background-size: 100% auto;
-  background-position: center;
-  border-radius: 28px;
-}
-
-.start-screen {
-  background-image:
-    linear-gradient(rgba(255,255,255,0.08), rgba(255,255,255,0.18)),
-    url("background.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-color: #fff8ef;
-}
-
-.start-screen {
-  width: min(92vw, 920px);
-  aspect-ratio: 16 / 10;
-  min-height: auto;
-  margin: 60px auto;
-  padding: 0;
-
-  background-image:
-    linear-gradient(rgba(255,255,255,0.08), rgba(255,255,255,0.14)),
-    url("background.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  border-radius: 28px;
-}
-
-.logo-area {
-  padding-top: 120px;
-}
-
-.start-button-area {
-  margin-top: 42px;
-}
-
-.start-screen::before,
-.start-screen::after,
-.maple-leaf,
-.mist {
-  display: none;
-}
-
-/* ===== 첫 화면 배경 최종 수정 ===== */
+/* ===== 첫 화면 최종 정리 ===== */
 
 body {
   min-height: 100vh;
   margin: 0;
   background:
-    linear-gradient(rgba(255,255,255,0.12), rgba(255,255,255,0.18)),
+    linear-gradient(rgba(255,255,255,0.18), rgba(255,255,255,0.24)),
     url("background.png");
   background-size: cover;
   background-position: center center;
@@ -894,16 +705,37 @@ body {
 
 .container.start-screen .logo-area {
   padding-top: 0;
-  margin-bottom: 40px;
+  margin-bottom: 34px;
 }
 
 .container.start-screen .main-logo {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: #f3c63b !important;
+  color: #f3c63b !important;
+
   font-size: 5rem;
-  margin: 0 0 18px;
+  font-weight: 900;
+  letter-spacing: 2px;
+
+  -webkit-text-stroke: 1px rgba(90, 55, 0, 0.55);
+
+  text-shadow:
+    0 2px 0 rgba(90, 55, 0, 0.55),
+    0 5px 12px rgba(0,0,0,0.28),
+    0 0 22px rgba(255, 210, 70, 0.55);
 }
 
 .container.start-screen .main-subtitle {
-  margin-bottom: 34px;
+  color: #2f2858 !important;
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin: 0 0 30px;
+
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.95),
+    0 0 8px rgba(255,255,255,0.8);
 }
 
 .container.start-screen .start-button-area {
@@ -914,12 +746,22 @@ body {
 .container.start-screen button {
   width: 100%;
   max-width: none;
+  font-size: 1.2rem;
+  font-weight: 800;
+  border-radius: 30px;
+
+  background: linear-gradient(135deg, #8065ff, #5ca7ff);
+
+  box-shadow:
+    0 12px 26px rgba(74, 110, 255, 0.35),
+    0 0 28px rgba(124, 92, 255, 0.28);
 }
 
 .container.start-screen::before,
 .container.start-screen::after,
 .container.start-screen .maple-leaf,
-.container.start-screen .mist {
+.container.start-screen .mist,
+.container.start-screen .leaf-mark {
   display: none;
 }
 
@@ -930,87 +772,15 @@ body {
   }
 
   .container.start-screen .main-logo {
-    font-size: 3.6rem;
+    font-size: 3.7rem;
   }
 
   .container.start-screen .main-subtitle {
     font-size: 1rem;
-    margin-bottom: 26px;
+    margin-bottom: 24px;
   }
 
   .container.start-screen .start-button-area {
     width: 90vw;
   }
-}
-
-/* ===== 첫 화면 글자 가독성 강화 ===== */
-
-.container.start-screen .main-logo {
-  color: #ffb300;
-  background: none;
-  -webkit-background-clip: initial;
-  background-clip: initial;
-
-  text-shadow:
-    0 3px 0 rgba(120, 72, 0, 0.55),
-    0 0 12px rgba(255, 255, 255, 0.9),
-    0 0 28px rgba(255, 170, 0, 0.55);
-
-  -webkit-text-stroke: 1.5px rgba(115, 68, 0, 0.55);
-}
-
-.container.start-screen .main-subtitle {
-  color: #2f2a55;
-  font-weight: 900;
-  text-shadow:
-    0 2px 0 rgba(255,255,255,0.9),
-    0 0 10px rgba(255,255,255,0.9);
-}
-
-.container.start-screen .main-logo {
-
-  background: none !important;
-
-  -webkit-text-fill-color: #f3cb4d !important;
-  color: #f3cb4d !important;
-
-  font-size: 5rem;
-
-  letter-spacing: 2px;
-
-  text-shadow:
-    0 2px 0 rgba(120,80,0,0.45),
-    0 4px 10px rgba(0,0,0,0.25),
-    0 0 25px rgba(255,220,80,0.55);
-
-  -webkit-text-stroke:
-    1px rgba(130,80,0,0.45);
-}
-
-/* ===== 메BTI 로고 강제 수정 ===== */
-
-.container.start-screen .main-logo {
-  background: none !important;
-  -webkit-background-clip: initial !important;
-  -webkit-text-fill-color: #f8c936 !important;
-  color: #f8c936 !important;
-
-  font-weight: 900 !important;
-
-  text-shadow:
-    0 3px 0 #8a5b00,
-    0 6px 12px rgba(0,0,0,0.35),
-    0 0 20px rgba(255,200,0,0.6) !important;
-
-  letter-spacing: 2px;
-}
-
-.container.start-screen .main-subtitle {
-
-  color: #362b68 !important;
-
-  font-weight: 700;
-
-  text-shadow:
-    0 0 8px rgba(255,255,255,0.8);
 }
