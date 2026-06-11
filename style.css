@@ -814,7 +814,17 @@ body {
   background-image:
     linear-gradient(rgba(255,255,255,0.18), rgba(255,255,255,0.28)),
     url("background.png");
-  background-size: cover;
+  background-size: 100% auto;
   background-position: center;
   border-radius: 28px;
+}
+
+.start-screen {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.08), rgba(255,255,255,0.18)),
+    url("background.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: #fff8ef;
 }
