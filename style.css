@@ -828,3 +828,35 @@ body {
   background-position: center top;
   background-color: #fff8ef;
 }
+
+.start-screen {
+  width: min(92vw, 920px);
+  aspect-ratio: 16 / 10;
+  min-height: auto;
+  margin: 60px auto;
+  padding: 0;
+
+  background-image:
+    linear-gradient(rgba(255,255,255,0.08), rgba(255,255,255,0.14)),
+    url("background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: 28px;
+}
+
+.logo-area {
+  padding-top: 120px;
+}
+
+.start-button-area {
+  margin-top: 42px;
+}
+
+.start-screen::before,
+.start-screen::after,
+.maple-leaf,
+.mist {
+  display: none;
+}
