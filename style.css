@@ -809,3 +809,12 @@ body {
   }
 
 }
+
+body {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.28), rgba(255,255,255,0.35)),
+    url("background.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
