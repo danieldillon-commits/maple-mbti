@@ -894,6 +894,7 @@ body {
 
 .container.start-screen .logo-area {
   padding-top: 0;
+  margin-bottom: 40px;
 }
 
 .container.start-screen .main-logo {
@@ -1005,10 +1006,11 @@ body {
 }
 
 .container.start-screen .main-subtitle {
-  color: #34265c !important;
 
-  font-weight: 800 !important;
+  color: #362b68 !important;
+
+  font-weight: 700;
 
   text-shadow:
-    0 1px 4px rgba(255,255,255,0.9);
+    0 0 8px rgba(255,255,255,0.8);
 }
