@@ -633,6 +633,62 @@ const resultDescriptions = {
   "아크": "당신은 변화를 두려워하지 않는 사람입니다.\n\n새로운 길이 보이면 먼저 걸어가 보고 싶어집니다.\n\n어제의 자신에 만족하기보다 더 나은 모습을 만들고 싶어 합니다.\n\n실패조차 성장의 과정으로 받아들일 수 있는 용기가 있습니다.\n\n새로운 길은 누군가 먼저 걸어야 만들어집니다."
 };
 
+const jobThemes = {
+  "히어로": ["#c0392b", "#f39c12"],
+  "다크나이트": ["#2c2c54", "#706fd3"],
+  "나이트로드": ["#1e272e", "#9b59b6"],
+  "비숍": ["#f9f3ff", "#f6c1ff"],
+  "미하일": ["#f7d794", "#ffffff"],
+  "팔라딘": ["#f1c40f", "#ffffff"],
+
+  "데몬슬레이어": ["#2c003e", "#e74c3c"],
+  "썬콜": ["#74b9ff", "#dff9fb"],
+  "에반": ["#7ed6df", "#686de0"],
+  "제로": ["#dfe6e9", "#74b9ff"],
+  "섀도어": ["#2d3436", "#6c5ce7"],
+  "루미너스": ["#ffffff", "#6c5ce7"],
+
+  "윈드브레이커": ["#55efc4", "#74b9ff"],
+  "나이트워커": ["#130f40", "#535c68"],
+  "와일드헌터": ["#6ab04c", "#badc58"],
+  "카인": ["#2d1b4e", "#8e44ad"],
+  "바이퍼": ["#00cec9", "#0984e3"],
+  "플레임위자드": ["#ff7675", "#fdcb6e"],
+
+  "제논": ["#00cec9", "#a29bfe"],
+  "카이저": ["#c0392b", "#f1c40f"],
+  "메카닉": ["#636e72", "#fdcb6e"],
+  "일리움": ["#81ecec", "#6c5ce7"],
+  "신궁": ["#dfe6e9", "#0984e3"],
+  "패스파인더": ["#6c5ce7", "#00cec9"],
+
+  "팬텀": ["#f1c40f", "#8e44ad"],
+  "불독": ["#e17055", "#d63031"],
+  "블래스터": ["#d63031", "#2d3436"],
+  "엔젤릭버스터": ["#ff9ff3", "#a29bfe"],
+  "스트라이커": ["#0984e3", "#00cec9"],
+  "키네시스": ["#6c5ce7", "#fd79a8"],
+
+  "호영": ["#00b894", "#fdcb6e"],
+  "캡틴": ["#0984e3", "#fdcb6e"],
+  "카데나": ["#2d3436", "#e84393"],
+  "렌": ["#7ed6df", "#a29bfe"],
+  "칼리": ["#6c5ce7", "#d63031"],
+
+  "캐논마스터": ["#e67e22", "#f1c40f"],
+  "데몬어벤져": ["#8e0000", "#2d3436"],
+  "라라": ["#ffbe76", "#badc58"],
+  "보우마스터": ["#27ae60", "#f9ca24"],
+  "은월": ["#dff9fb", "#74b9ff"],
+
+  "소울마스터": ["#f9ca24", "#ffffff"],
+  "아란": ["#74b9ff", "#dfe6e9"],
+  "메르세데스": ["#00b894", "#f1c40f"],
+  "아델": ["#a7c7ff", "#ffc8dd"],
+  "배틀메이지": ["#2d3436", "#9b59b6"],
+  "아크": ["#2d3436", "#00cec9"]
+};
+
 let currentQuestion = 0;
 let currentJobQuestion = 0;
 let selectedMbti = "";
@@ -723,9 +779,10 @@ function showFinalResult() {
 
   const allJobs = jobQuestions[selectedMbti][0].answers.map(answer => answer.job);
   const relatedJobs = allJobs.filter(job => job !== finalJob);
+  const theme = jobThemes[finalJob] || ["#7c5cff", "#4aa3ff"];
 
   document.querySelector(".container").innerHTML = `
-    <div class="result-card">
+<div class="result-card" style="--job-color-1: ${theme[0]}; --job-color-2: ${theme[1]};">
       <p class="result-label">당신의 메BTI 직업은?</p>
 
       <h1>${finalJob}</h1>
