@@ -82,21 +82,17 @@ button:active {
 }
 
 .result-card h1 {
-  font-size: 3.4rem;
-  margin: 12px 0;
+  font-size: 3.8rem;
+  font-weight: 900;
+  margin: 15px 0;
 
-  background: linear-gradient(
-    135deg,
-    #7c5cff,
-    #ff5ca8,
-    #ffd700
-  );
-
-  -webkit-background-clip: text;
-  color: transparent;
+  color: #1c1730;
+  letter-spacing: 2px;
 
   text-shadow:
-    0 0 20px rgba(124,92,255,0.35);
+    0 0 12px var(--job-color-1),
+    0 0 28px var(--job-color-2),
+    0 0 45px rgba(255,255,255,0.7);
 }
 
 .result-label {
@@ -104,32 +100,6 @@ button:active {
   font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 1px;
-}
-
-.result-card h1 {
-  font-size: 3.6rem;
-  font-weight: 900;
-  margin: 15px 0;
-
-  background: linear-gradient(
-    135deg,
-    #ffd700 0%,
-    #ff9d00 25%,
-    #ffffff 50%,
-    #a855f7 75%,
-    #5b7cff 100%
-  );
-
-  background-size: 200% 200%;
-
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-
-  text-shadow:
-    0 0 18px rgba(255, 215, 0, 0.45);
-
-  letter-spacing: 2px;
 }
 
 .result-card h2 {
