@@ -753,31 +753,21 @@ body {
   }
 
 .container.start-screen .main-logo {
-
   background: none !important;
-
-  -webkit-text-fill-color: #f3cb4d !important;
-  color: #f3cb4d !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: #ffd84a !important;
+  color: #ffd84a !important;
 
   font-size: 5rem;
-
+  font-weight: 950;
   letter-spacing: 2px;
 
+  -webkit-text-stroke: 2px rgba(78, 45, 0, 0.75);
+
   text-shadow:
-    0 2px 0 rgba(120,80,0,0.45),
-    0 4px 10px rgba(0,0,0,0.25),
-    0 0 25px rgba(255,220,80,0.55);
-
-  -webkit-text-stroke:
-    1px rgba(130,80,0,0.45);
-}
-
-  .container.start-screen .main-subtitle {
-    font-size: 1rem;
-    margin-bottom: 24px;
-  }
-
-  .container.start-screen .start-button-area {
-    width: 90vw;
-  }
+    0 3px 0 rgba(90, 50, 0, 0.8),
+    0 7px 14px rgba(0,0,0,0.35),
+    0 0 18px rgba(255, 255, 255, 0.95),
+    0 0 34px rgba(255, 200, 40, 0.75);
 }
