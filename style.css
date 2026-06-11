@@ -708,25 +708,6 @@ body {
   margin-bottom: 34px;
 }
 
-.container.start-screen .main-logo {
-  background: none !important;
-  -webkit-background-clip: initial !important;
-  background-clip: initial !important;
-  -webkit-text-fill-color: #f3c63b !important;
-  color: #f3c63b !important;
-
-  font-size: 5rem;
-  font-weight: 900;
-  letter-spacing: 2px;
-
-  -webkit-text-stroke: 1px rgba(90, 55, 0, 0.55);
-
-  text-shadow:
-    0 2px 0 rgba(90, 55, 0, 0.55),
-    0 5px 12px rgba(0,0,0,0.28),
-    0 0 22px rgba(255, 210, 70, 0.55);
-}
-
 .container.start-screen .main-subtitle {
   color: #2f2858 !important;
   font-size: 1.2rem;
@@ -771,9 +752,24 @@ body {
     padding: 0 18px;
   }
 
-  .container.start-screen .main-logo {
-    font-size: 3.7rem;
-  }
+.container.start-screen .main-logo {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: #f3c63b !important;
+  color: #f3c63b !important;
+
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+
+  -webkit-text-stroke: 1px rgba(90, 55, 0, 0.55);
+
+  text-shadow:
+    0 2px 0 rgba(90, 55, 0, 0.55),
+    0 5px 12px rgba(0,0,0,0.28),
+    0 0 22px rgba(255, 210, 70, 0.55);
+}
 
   .container.start-screen .main-subtitle {
     font-size: 1rem;
