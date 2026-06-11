@@ -860,3 +860,84 @@ body {
 .mist {
   display: none;
 }
+
+/* ===== 첫 화면 배경 최종 수정 ===== */
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(rgba(255,255,255,0.12), rgba(255,255,255,0.18)),
+    url("background.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container.start-screen {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.container.start-screen .logo-area {
+  padding-top: 0;
+}
+
+.container.start-screen .main-logo {
+  font-size: 5rem;
+  margin: 0 0 18px;
+}
+
+.container.start-screen .main-subtitle {
+  margin-bottom: 34px;
+}
+
+.container.start-screen .start-button-area {
+  width: min(90vw, 520px);
+  margin-top: 0;
+}
+
+.container.start-screen button {
+  width: 100%;
+  max-width: none;
+}
+
+.container.start-screen::before,
+.container.start-screen::after,
+.container.start-screen .maple-leaf,
+.container.start-screen .mist {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .container.start-screen {
+    justify-content: center;
+    padding: 0 18px;
+  }
+
+  .container.start-screen .main-logo {
+    font-size: 3.6rem;
+  }
+
+  .container.start-screen .main-subtitle {
+    font-size: 1rem;
+    margin-bottom: 26px;
+  }
+
+  .container.start-screen .start-button-area {
+    width: 90vw;
+  }
+}
