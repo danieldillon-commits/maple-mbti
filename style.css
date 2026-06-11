@@ -208,3 +208,35 @@ button:active {
   transform: translateY(-5px);
   box-shadow: 0 25px 50px rgba(80,72,130,0.25);
 }
+
+.result-card {
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.88), rgba(255,255,255,0.72)),
+    linear-gradient(135deg, var(--job-color-1), var(--job-color-2));
+  border: 2px solid rgba(255,255,255,0.9);
+}
+
+.result-card h1 {
+  background: linear-gradient(
+    135deg,
+    var(--job-color-1),
+    var(--job-color-2),
+    #ffffff
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.result-card h2 {
+  color: var(--job-color-1);
+}
+
+.result-description {
+  border-left: 6px solid var(--job-color-1);
+}
+
+.job-card {
+  color: var(--job-color-1);
+  background: color-mix(in srgb, var(--job-color-2) 18%, white);
+}
