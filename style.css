@@ -428,3 +428,384 @@ body {
     font-size: 1.05rem;
   }
 }
+
+/* ===========================
+   메BTI V6 MAPLE WORLD
+=========================== */
+
+.start-screen {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding-top: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* 전체 하늘 배경 */
+.start-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 50% 18%,
+      rgba(255,220,100,0.45),
+      transparent 25%),
+
+    linear-gradient(
+      180deg,
+      rgba(255,245,210,0.6) 0%,
+      rgba(245,235,255,0.4) 45%,
+      rgba(225,240,255,0.55) 100%
+    );
+
+  z-index: -10;
+}
+
+
+/* 황금 오라 */
+.logo-aura {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+
+  top: 20px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,215,0,0.55),
+      rgba(255,180,0,0.15),
+      transparent 70%
+    );
+
+  filter: blur(20px);
+
+  animation:
+    auraFloat 4s ease-in-out infinite;
+}
+
+
+@keyframes auraFloat {
+
+  0%,100% {
+    transform:
+      translateX(-50%)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translateX(-50%)
+      scale(1.08);
+  }
+}
+
+
+/* 로고 영역 */
+.logo-area {
+  position: relative;
+  z-index: 5;
+}
+
+
+.main-logo {
+
+  font-size: 5rem;
+
+  font-weight: 900;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fff8c5,
+      #ffd700,
+      #ff9f00
+    );
+
+  -webkit-background-clip: text;
+
+  color: transparent;
+
+  text-shadow:
+    0 0 25px rgba(255,220,80,0.6);
+
+  margin-bottom: 20px;
+
+}
+
+
+.main-subtitle {
+
+  font-size: 1.25rem;
+
+  color: #4a4568;
+
+  font-weight: 600;
+}
+
+/* ===========================
+   단풍 실루엣
+=========================== */
+
+.maple-leaf {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  opacity: 0.12;
+  z-index: 1;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,140,0,0.7),
+      rgba(255,100,0,0.25),
+      transparent 70%
+    );
+
+  filter: blur(25px);
+
+  animation:
+    leafFloat 8s ease-in-out infinite;
+}
+
+
+.leaf-1 {
+  top: 12%;
+  left: 10%;
+}
+
+
+.leaf-2 {
+  top: 35%;
+  right: 8%;
+  animation-delay: 2s;
+}
+
+
+.leaf-3 {
+  bottom: 18%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+
+@keyframes leafFloat {
+
+  0%,100% {
+    transform:
+      translateY(0px)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translateY(-25px)
+      rotate(12deg);
+  }
+}
+
+
+/* ===========================
+   별 입자
+=========================== */
+
+.star {
+  position: absolute;
+  color: #ffd966;
+  font-size: 1.5rem;
+  z-index: 3;
+
+  animation:
+    sparkle 2.5s ease-in-out infinite;
+}
+
+
+.star-1 {
+  top: 15%;
+  left: 30%;
+}
+
+.star-2 {
+  top: 22%;
+  right: 28%;
+  animation-delay: 1s;
+}
+
+.star-3 {
+  top: 58%;
+  left: 15%;
+  animation-delay: 1.5s;
+}
+
+.star-4 {
+  bottom: 25%;
+  right: 18%;
+  animation-delay: 0.5s;
+}
+
+.star-5 {
+  top: 70%;
+  left: 60%;
+  animation-delay: 2s;
+}
+
+
+@keyframes sparkle {
+
+  0%,100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+
+/* ===========================
+   하단 신비로운 안개
+=========================== */
+
+.mist {
+  position: absolute;
+  bottom: -80px;
+
+  width: 500px;
+  height: 220px;
+
+  border-radius: 50%;
+
+  filter: blur(45px);
+
+  opacity: 0.55;
+
+  animation:
+    mistMove 12s ease-in-out infinite;
+}
+
+
+.mist-1 {
+  left: -80px;
+
+  background:
+    rgba(190, 170, 255, 0.65);
+}
+
+
+.mist-2 {
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background:
+    rgba(150, 210, 255, 0.6);
+
+  animation-delay: 4s;
+}
+
+
+.mist-3 {
+  right: -80px;
+
+  background:
+    rgba(255, 210, 120, 0.45);
+
+  animation-delay: 8s;
+}
+
+
+@keyframes mistMove {
+
+  0%,100% {
+    transform:
+      translateY(0px);
+  }
+
+  50% {
+    transform:
+      translateY(-25px);
+  }
+}
+
+
+/* ===========================
+   게임 시작 버튼
+=========================== */
+
+.start-button-area {
+  position: relative;
+  z-index: 5;
+
+  margin-top: 35px;
+}
+
+
+.start-screen button {
+
+  max-width: 450px;
+
+  margin: auto;
+
+  font-size: 1.2rem;
+
+  font-weight: 800;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8c6cff,
+      #4aa3ff
+    );
+
+  box-shadow:
+    0 0 25px rgba(124,92,255,0.55),
+    0 0 60px rgba(74,163,255,0.35);
+
+  transition:
+    0.35s;
+}
+
+
+.start-screen button:hover {
+
+  transform:
+    translateY(-5px)
+    scale(1.04);
+
+  box-shadow:
+    0 0 35px rgba(255,215,0,0.6),
+    0 0 70px rgba(124,92,255,0.55);
+}
+
+
+/* 모바일 */
+@media (max-width: 600px) {
+
+  .main-logo {
+    font-size: 3.8rem;
+  }
+
+
+  .maple-leaf {
+    width: 120px;
+    height: 120px;
+  }
+
+
+  .mist {
+    width: 300px;
+  }
+
+}
