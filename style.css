@@ -767,3 +767,8 @@ body {
     0 4px 0 #5e3200,
     0 6px 12px rgba(0,0,0,0.35);
 }
+
+.container.start-screen .main-logo {
+  color: red !important;
+  -webkit-text-fill-color: red !important;
+}
