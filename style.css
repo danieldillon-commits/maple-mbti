@@ -972,3 +972,30 @@ body {
   border-radius: 24px;
   backdrop-filter: blur(2px);
 }
+
+/* ===== 메BTI 로고 강제 수정 ===== */
+
+.container.start-screen .main-logo {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: #f8c936 !important;
+  color: #f8c936 !important;
+
+  font-weight: 900 !important;
+
+  text-shadow:
+    0 3px 0 #8a5b00,
+    0 6px 12px rgba(0,0,0,0.35),
+    0 0 20px rgba(255,200,0,0.6) !important;
+
+  letter-spacing: 2px;
+}
+
+.container.start-screen .main-subtitle {
+  color: #34265c !important;
+
+  font-weight: 800 !important;
+
+  text-shadow:
+    0 1px 4px rgba(255,255,255,0.9);
+}
