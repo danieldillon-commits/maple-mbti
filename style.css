@@ -754,18 +754,18 @@ body {
 
 .container.start-screen .main-logo {
   background: none !important;
-  -webkit-text-fill-color: #d89a00 !important;
-  color: #d89a00 !important;
+  -webkit-text-fill-color: #c88400 !important;
+  color: #c88400 !important;
 
   font-size: 5rem;
   font-weight: 900;
   letter-spacing: 2px;
 
-  -webkit-text-stroke: 2.5px #5e3200;
+  -webkit-text-stroke: 3px #4a2400;
 
   text-shadow:
-    0 4px 0 #5e3200,
-    0 6px 12px rgba(0,0,0,0.35);
+    0 5px 0 #4a2400,
+    0 9px 18px rgba(0,0,0,0.45);
 }
 
 .container.start-screen .main-logo {
