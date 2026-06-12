@@ -211,13 +211,6 @@ button:active {
   background: color-mix(in srgb, var(--job-color-2) 18%, white);
 }
 
-.main-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-}
-
 .mushroom-icon {
   font-size: 2.6rem;
   filter: drop-shadow(0 0 12px rgba(255, 132, 0, 0.45));
@@ -271,18 +264,6 @@ button:active {
   filter:
     drop-shadow(0 0 18px rgba(255, 150, 0, 0.65))
     drop-shadow(0 0 35px rgba(255, 215, 0, 0.45));
-}
-
-.main-logo {
-  font-size: 4.2rem;
-  font-weight: 950;
-  margin: 0 0 18px;
-  background: linear-gradient(135deg, #ff8a00, #ffd700, #fff2a8);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0 0 35px rgba(255, 180, 0, 0.35);
-  letter-spacing: 2px;
 }
 
 .main-subtitle {
@@ -374,20 +355,6 @@ body {
   top: 34px;
 }
 
-.main-logo {
-  font-size: 4.8rem;
-  font-weight: 950;
-  margin: 0 0 16px;
-  background: linear-gradient(135deg, #ff8a00 0%, #ffd700 48%, #fff4b3 72%, #ffb000 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  letter-spacing: 3px;
-  text-shadow:
-    0 0 18px rgba(255, 176, 0, 0.35),
-    0 0 42px rgba(255, 215, 0, 0.28);
-}
-
 .main-subtitle {
   font-size: 1.22rem;
   color: #4b4168;
@@ -418,10 +385,6 @@ body {
 
   .leaf-mark {
     font-size: 3.8rem;
-  }
-
-  .main-logo {
-    font-size: 3.7rem;
   }
 
   .main-subtitle {
@@ -514,21 +477,6 @@ body {
   position: relative;
   z-index: 5;
 }
-
-
-.main-logo {
-
-  font-size: 5rem;
-
-  font-weight: 900;
-
-  background:
-    linear-gradient(
-      180deg,
-      #fff8c5,
-      #ffd700,
-      #ff9f00
-    );
 
   -webkit-background-clip: text;
 
@@ -752,30 +700,27 @@ body {
     padding: 0 18px;
   }
 
+/* ===== 메BTI 로고 최종본 ===== */
+
 .container.start-screen .main-logo {
   background: none !important;
-  -webkit-text-fill-color: #c88400 !important;
   color: #c88400 !important;
+  -webkit-text-fill-color: #c88400 !important;
 
   font-size: 5rem;
-  font-weight: 900;
+  font-weight: 950;
   letter-spacing: 2px;
 
-  -webkit-text-stroke: 3px #4a2400;
+  -webkit-text-stroke: 3px #4a2400 !important;
 
   text-shadow:
     0 5px 0 #4a2400,
-    0 9px 18px rgba(0,0,0,0.45);
+    0 9px 18px rgba(0,0,0,0.45),
+    0 0 18px rgba(255,255,255,0.7) !important;
 }
 
+@media (max-width: 600px) {
   .container.start-screen .main-logo {
-  background: none !important;
-  color: red !important;
-  -webkit-text-fill-color: red !important;
-  -webkit-text-stroke: 0px !important;
-  text-shadow: none !important;
-}
-.container.start-screen .main-logo {
-  color: red !important;
-  -webkit-text-fill-color: red !important;
+    font-size: 3.7rem;
+  }
 }
