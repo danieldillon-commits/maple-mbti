@@ -704,23 +704,17 @@ body {
 
 .container.start-screen .main-logo {
   background: none !important;
-  color: #c88400 !important;
-  -webkit-text-fill-color: #c88400 !important;
+
+  color: #d98b00 !important;
+  -webkit-text-fill-color: #d98b00 !important;
 
   font-size: 5rem;
   font-weight: 950;
   letter-spacing: 2px;
 
-  -webkit-text-stroke: 3px #4a2400 !important;
+  -webkit-text-stroke: 1.5px #5b3300 !important;
 
   text-shadow:
-    0 5px 0 #4a2400,
-    0 9px 18px rgba(0,0,0,0.45),
-    0 0 18px rgba(255,255,255,0.7) !important;
-}
-
-@media (max-width: 600px) {
-  .container.start-screen .main-logo {
-    font-size: 3.7rem;
-  }
+    0 3px 6px rgba(80, 40, 0, 0.45),
+    0 0 20px rgba(255, 210, 70, 0.55) !important;
 }
