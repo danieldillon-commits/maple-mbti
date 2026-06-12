@@ -768,6 +768,13 @@ body {
     0 9px 18px rgba(0,0,0,0.45);
 }
 
+  .container.start-screen .main-logo {
+  background: none !important;
+  color: red !important;
+  -webkit-text-fill-color: red !important;
+  -webkit-text-stroke: 0px !important;
+  text-shadow: none !important;
+}
 .container.start-screen .main-logo {
   color: red !important;
   -webkit-text-fill-color: red !important;
