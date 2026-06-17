@@ -742,3 +742,16 @@ h1.main-logo {
     font-size: 3.7rem !important;
   }
 }
+
+.main-logo {
+  background: none !important;
+  color: #d98b00 !important;
+  -webkit-text-fill-color: #d98b00 !important;
+  font-size: 5rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 2px !important;
+  -webkit-text-stroke: 1.5px #5b3300 !important;
+  text-shadow:
+    0 3px 6px rgba(80, 40, 0, 0.45),
+    0 0 20px rgba(255, 210, 70, 0.55) !important;
+}
