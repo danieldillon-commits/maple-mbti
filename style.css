@@ -755,3 +755,40 @@ h1.main-logo {
     0 3px 6px rgba(80, 40, 0, 0.45),
     0 0 20px rgba(255, 210, 70, 0.55) !important;
 }
+
+/* ===== 메BTI 로고 최종 디자인 ===== */
+
+.main-logo {
+  background: linear-gradient(
+    180deg,
+    #fff2a8 0%,
+    #ffd84a 35%,
+    #f0a800 70%,
+    #b86b00 100%
+  ) !important;
+
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+
+  font-size: 5.4rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 2px !important;
+
+  -webkit-text-stroke: 1.2px rgba(85, 45, 0, 0.75);
+
+  text-shadow:
+    0 3px 0 rgba(83, 45, 0, 0.7),
+    0 8px 16px rgba(0, 0, 0, 0.32),
+    0 0 24px rgba(255, 220, 90, 0.75) !important;
+
+  margin: 0 0 18px !important;
+}
+
+@media (max-width: 600px) {
+  .main-logo {
+    font-size: 4rem !important;
+  }
+}
