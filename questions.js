@@ -14,45 +14,73 @@ const questions = [
     ]
   },
   {
-    question: "Q3. 신직업이 나왔다.",
+    question: "Q3. 길드원이 수다를 떨고 있다.",
+    answers: [
+      { text: "자연스럽게 대화에 끼어든다.", type: "E" },
+      { text: "읽기만 하거나 필요한 말만 한다.", type: "I" }
+    ]
+  },
+  {
+    question: "Q4. 신직업이 나왔다.",
     answers: [
       { text: "성능부터 찾아본다.", type: "S" },
       { text: "컨셉과 이펙트부터 찾아본다.", type: "N" }
     ]
   },
   {
-    question: "Q4. 직업을 선택할 때",
+    question: "Q5. 직업을 선택할 때",
     answers: [
       { text: "현재 성능이 중요하다.", type: "S" },
       { text: "내가 끌리는 컨셉이 중요하다.", type: "N" }
     ]
   },
   {
-    question: "Q5. 본캐가 큰 너프를 받았다.",
+    question: "Q6. 유튜브에서 직업 영상을 본다.",
+    answers: [
+      { text: "딜량, 사냥 효율부터 본다.", type: "S" },
+      { text: "스토리와 연출부터 본다.", type: "N" }
+    ]
+  },
+  {
+    question: "Q7. 본캐가 큰 너프를 받았다.",
     answers: [
       { text: "더 강한 직업으로 갈아탄다.", type: "T" },
       { text: "애정이 있으니 계속 키운다.", type: "F" }
     ]
   },
   {
-    question: "Q6. 친구가 '이 직업 어때?' 라고 물어봤다.",
+    question: "Q8. 친구가 '이 직업 어때?' 라고 물어봤다.",
     answers: [
       { text: "성능부터 설명해준다.", type: "T" },
       { text: "컨셉과 재미부터 설명해준다.", type: "F" }
     ]
   },
   {
-    question: "Q7. 이벤트가 시작되었다.",
+    question: "Q9. 파티에 빈자리가 하나 남았다.",
+    answers: [
+      { text: "스펙이 좋은 사람을 데려간다.", type: "T" },
+      { text: "친한 사람을 데려간다.", type: "F" }
+    ]
+  },
+  {
+    question: "Q10. 이벤트가 시작되었다.",
     answers: [
       { text: "보상을 계산하고 계획부터 세운다.", type: "J" },
       { text: "일단 참여하고 본다.", type: "P" }
     ]
   },
   {
-    question: "Q8. 처음 가는 보스를 도전한다.",
+    question: "Q11. 처음 가는 보스를 도전한다.",
     answers: [
       { text: "공략을 숙지한 후 입장한다.", type: "J" },
       { text: "직접 해보면서 배운다.", type: "P" }
+    ]
+  },
+  {
+    question: "Q12. 주간 보스를 돌아야 한다.",
+    answers: [
+      { text: "정해둔 순서대로 깔끔하게 돈다.", type: "J" },
+      { text: "그날 기분 따라 돌고 싶은 것부터 돈다.", type: "P" }
     ]
   }
 ];
@@ -724,7 +752,7 @@ function renderQuestion() {
       ${q.answers[1].text}
     </button>
 
-    <p>${currentQuestion + 1} / 11</p>
+    <p>${currentQuestion + 1} / 15</p>
 
     ${currentQuestion > 0 ? `
       <button class="back-btn" onclick="goBackQuestion()">
@@ -793,7 +821,7 @@ function showJobQuestion() {
       ${q.answers[2].text}
     </button>
 
-    <p>${currentJobQuestion + 9} / 11</p>
+    <p>${currentJobQuestion + 13} / 15</p>
 
     <button class="back-btn" onclick="goBackJobQuestion()">
       이전 질문으로
